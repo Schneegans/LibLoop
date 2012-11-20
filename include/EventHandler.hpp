@@ -1,14 +1,5 @@
-/*
- * EventHandler.hpp
- *
- *  Created on: 20.11.2012
- *      Author: simon
- */
-
 #ifndef EVENTHANDLER_HPP_
 #define EVENTHANDLER_HPP_
-
-#include <functional>
 
 namespace loop {
 
