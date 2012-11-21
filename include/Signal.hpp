@@ -20,9 +20,9 @@ class Signal {
 			callbacks_.erase(id);
 		}
 
-		void emit(Parameters&&... p) {
+		void emit(Parameters... p) {
 			for (auto& callback: callbacks_) {
-				callback.second(std::forward<Parameters>(p)...);
+				callback.second(p...);
 			}
 		}
 

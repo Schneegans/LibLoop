@@ -2,6 +2,7 @@
 #define LOOP_HPP_
 
 #include "MainLoop.hpp"
+#include "Scheduler.hpp"
 #include "Signal.hpp"
 #include "Timer.hpp"
 

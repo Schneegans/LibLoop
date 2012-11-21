@@ -2,20 +2,21 @@
 #define TIMER_HPP_
 
 #include <ev++.h>
-#include <functional>
+#include "Scheduler.hpp"
+#include "Signal.hpp"
 
 namespace loop {
 
 class Timer {
 	public:
-		Timer(std::function<double()> callback, double delay);
-		~Timer();
+		Timer(double tick_time);
+		~Timer() {};
+
+		Signal<> on_tick;
 
 	private:
-		void self_callback(ev::timer &timer, int revents);
-
-		std::function<double()> callback_;
-		ev::timer 				timer_;
+		void self_callback(ev::timer& timer, int revents);
+		ev::timer timer_;
 };
 
 }

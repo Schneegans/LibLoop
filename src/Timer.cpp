@@ -2,20 +2,14 @@
 
 namespace loop {
 
-Timer::Timer(std::function<double()> callback, double delay):
-		callback_(callback) {
+Timer::Timer(double tick_time) {
 
 	timer_.set<Timer, &Timer::self_callback>(this);
-	timer_.start(delay, 0.0);
+	timer_.start(tick_time, tick_time);
 }
 
-Timer::~Timer() {}
-
-void Timer::self_callback(ev::timer &timer, int revents) {
-	double delay(callback_());
-
-	if (delay >= 0.0 )
-		timer_.start(delay, 0.0);
+void Timer::self_callback(ev::timer& timer, int revents) {
+	on_tick.emit();
 }
 
 }
