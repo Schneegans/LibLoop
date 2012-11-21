@@ -6,8 +6,6 @@
 
 namespace loop {
 
-struct EventHandler;
-
 class Timer {
 	public:
 		Timer(std::function<double()> callback, double delay);
@@ -17,8 +15,7 @@ class Timer {
 		void self_callback(ev::timer &timer, int revents);
 
 		std::function<double()> callback_;
-
-		ev::timer timer_;
+		ev::timer 				timer_;
 };
 
 }

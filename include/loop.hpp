@@ -2,7 +2,7 @@
 #define LOOP_HPP_
 
 #include "MainLoop.hpp"
-#include "EventHandler.hpp"
+#include "Signal.hpp"
 #include "Timer.hpp"
 
 #endif /* LOOP_HPP_ */

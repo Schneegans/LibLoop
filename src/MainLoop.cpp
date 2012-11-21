@@ -18,4 +18,8 @@ void MainLoop::stop() {
 	ev_break(loop, EVBREAK_ONE);
 }
 
+void MainLoop::on_event(std::function<void(Event)> callback) {
+	callback_ = callback;
+}
+
 }

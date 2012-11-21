@@ -1,5 +1,4 @@
 #include "Timer.hpp"
-#include "EventHandler.hpp"
 
 namespace loop {
 
