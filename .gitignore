@@ -2,6 +2,7 @@
 *.slo
 *.lo
 *.o
+example/bin
 
 # Compiled Dynamic libraries
 *.so
@@ -12,3 +13,7 @@
 *.la
 *.a
 /Debug
+
+#Code::Blocks files
+*.depend
+*.layout
