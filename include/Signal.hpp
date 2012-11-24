@@ -11,12 +11,12 @@ class Signal {
 	public:
 		Signal(): current_id_(0) {}
 
-		int connect(std::function<void(Parameters...)> const& callback) {
+		int connect(std::function<void(Parameters...)> const& callback) const{
 			callbacks_.insert(std::make_pair(++current_id_, callback));
 			return current_id_;
 		}
 
-		void disconnect(int id) {
+		void disconnect(int id) const{
 			callbacks_.erase(id);
 		}
 
@@ -27,8 +27,8 @@ class Signal {
 		}
 
 	private:
-		std::map<int, std::function<void(Parameters...)>> callbacks_;
-		int current_id_;
+		mutable std::map<int, std::function<void(Parameters...)>> callbacks_;
+		mutable int current_id_;
 };
 
 }

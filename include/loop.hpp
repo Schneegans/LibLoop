@@ -4,6 +4,7 @@
 #include "MainLoop.hpp"
 #include "Scheduler.hpp"
 #include "Signal.hpp"
+#include "Properties.hpp"
 #include "Timer.hpp"
 
 #endif /* LOOP_HPP_ */

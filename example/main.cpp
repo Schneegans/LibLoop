@@ -6,7 +6,10 @@ class Greeter {
     public:
         Greeter(float greet_interval = 1.f):
             timer_(greet_interval) {
-                timer_.on_tick.connect(std::bind(&loop::Signal<>::emit, &greet));
+                timer_.on_tick.connect([&](){
+                    std::cout << "Minding my own business..." << std::endl;
+                    greet.emit();
+                });
             }
 
         loop::Signal<> greet;
@@ -16,9 +19,12 @@ class Greeter {
 };
 
 int main() {
-    Greeter greety;
-    greety.greet.connect([]() {
-        std::cout << "Hello loop!" << std::endl;
+    Greeter greety(2.f);
+    loop::Scheduler scheduler;
+    greety.greet.connect([&]() {
+        scheduler.execute_delayed([](){
+            std::cout << "Surprise!" << std::endl;
+        }, 5);
     });
 
     loop::MainLoop loop;

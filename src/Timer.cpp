@@ -13,5 +13,3 @@ void Timer::self_callback(ev::timer& timer, int revents) {
 }
 
 }
-
-
