@@ -47,7 +47,6 @@
 		<Unit filename="include/Signal.hpp" />
 		<Unit filename="include/Timer.hpp" />
 		<Unit filename="include/loop.hpp" />
-		<Unit filename="include/properties/ComparableProperty.hpp" />
 		<Unit filename="include/properties/LogicalProperty.hpp" />
 		<Unit filename="include/properties/NumericProperty.hpp" />
 		<Unit filename="include/properties/Property.hpp" />

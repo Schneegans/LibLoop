@@ -42,6 +42,22 @@ class Property {
             return *this;
         }
 
+        bool operator==(Property<T> const& rhs) const {
+            return Property<T>::get() == rhs.get();
+        }
+
+        bool operator==(T const& rhs) const {
+            return Property<T>::get() == rhs;
+        }
+
+        bool operator!=(Property<T> const& rhs) const {
+            return Property<T>::get() != rhs.get();
+        }
+
+        bool operator!=(T const& rhs) const {
+            return Property<T>::get() != rhs;
+        }
+
 	private:
 		T value_;
 		Signal<T> on_change_;

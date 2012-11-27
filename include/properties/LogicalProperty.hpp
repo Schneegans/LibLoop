@@ -1,12 +1,12 @@
 #ifndef LOGICAL_PROPERTY_HPP_
 #define LOGICAL_PROPERTY_HPP_
 
-#include "properties/ComparableProperty.hpp"
+#include "properties/Property.hpp"
 
 namespace loop {
 
 template<typename T>
-class LogicalProperty : public virtual ComparableProperty<T> {
+class LogicalProperty : public virtual Property<T> {
 
 	public:
 		LogicalProperty(): Property<T>(){}

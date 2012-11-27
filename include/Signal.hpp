@@ -11,6 +11,12 @@ class Signal {
 	public:
 		Signal(): current_id_(0) {}
 
+        template<typename F, typename ...Args>
+        int connect_member(F&& f, Args&&... a) const{
+			callbacks_.insert(std::make_pair(++current_id_, std::bind(f, a...)));
+			return current_id_;
+		}
+
 		int connect(std::function<void(Parameters...)> const& callback) const{
 			callbacks_.insert(std::make_pair(++current_id_, callback));
 			return current_id_;

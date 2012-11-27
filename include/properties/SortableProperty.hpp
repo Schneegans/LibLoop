@@ -1,12 +1,12 @@
 #ifndef SORTABLE_PROPERTY_HPP_
 #define SORTABLE_PROPERTY_HPP_
 
-#include "properties/ComparableProperty.hpp"
+#include "properties/Property.hpp"
 
 namespace loop {
 
 template<typename T>
-class SortableProperty : public virtual ComparableProperty<T> {
+class SortableProperty : public virtual Property<T> {
 
 	public:
 		SortableProperty(): Property<T>(){}
